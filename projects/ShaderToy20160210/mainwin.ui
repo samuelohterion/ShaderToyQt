@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWin</class>
+ <widget class="QWidget" name="MainWin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1060</width>
+    <height>463</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ShaderToy</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="3" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>anim</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="4">
+    <widget class="OGLWgt" name="widget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>640</width>
+       <height>400</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>640</width>
+       <height>400</height>
+      </size>
+     </property>
+     <property name="baseSize">
+      <size>
+       <width>640</width>
+       <height>400</height>
+      </size>
+     </property>
+     <layout class="QGridLayout" name="gridLayout"/>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLCDNumber" name="lcdNumber"/>
+   </item>
+   <item row="3" column="2">
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="text">
+      <string>full screen</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="text">
+      <string>save</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="5" rowspan="4">
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="font">
+      <font>
+       <family>DejaVu Sans Mono</family>
+      </font>
+     </property>
+     <property name="locale">
+      <locale language="English" country="UnitedStates"/>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="plainText">
+      <string>void 
+	mainFrame( in vec4 p_col, in vec2 p_xy ) {
+
+	vec2
+		xy = ( p_xy / iResolution.xy - .5 ) * vec2( iResolution.x, iResolution.y, 1. );
+
+	p_col = vec4( .5 + p_xy, 0., sin( iGlobalTime ), 1. );
+}</string>
+     </property>
+     <property name="tabStopWidth">
+      <number>20</number>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>OGLWgt</class>
+   <extends>QWidget</extends>
+   <header>oglwgt.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
